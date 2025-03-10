@@ -13,3 +13,6 @@ jq
 pypdf
 pymysql
 cryptography
+psycopg2-binary
+langchain_milvus
+pymilvus

@@ -12,7 +12,7 @@ class MySQLDatabase:
         password = os.getenv("MYSQL_PASSWORD")
         host = os.getenv("MYSQL_HOST")
         db_name = os.getenv("MYSQL_DB")
-        model = os.getenv("OLLAMA_MODEL", "deepseek-r1:1.5b")
+        model = os.getenv("OLLAMA_MODEL")
 
         uri = f"mysql+pymysql://{user}:{password}@{host}/{db_name}"
         self.db = SQLDatabase.from_uri(uri)
@@ -25,8 +25,3 @@ class MySQLDatabase:
         result = self.db.run(sql_query)
         return result
 
-# Example usage:
-if __name__ == "__main__":
-    db = MySQLDatabase()
-    response = db.query("How many Alice are in the database?")
-    print("Query Result:", response)

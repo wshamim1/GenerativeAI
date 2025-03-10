@@ -4,7 +4,7 @@ import sys, os
 sys.path.insert(1, os.getcwd())
 
 from src.llms.ollama_llm import OllamaLLM
-from src.langchain.documentloader.document_loader import DocumentLoader
+from src.documentloader.document_loader import DocumentLoader
 from src.chains.prompt_chain import GenericPromptChain
 
 from langchain_core.prompts import ChatPromptTemplate
