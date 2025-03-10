@@ -1,0 +1,39 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "name": "Alice",
+            "role": "Developer",
+            "department": "Engineering"
+        },
+        {
+            "id": 2,
+            "name": "Bob",
+            "role": "Designer",
+            "department": "Design"
+        },
+        {
+            "id": 3,
+            "name": "Charlie",
+            "role": "Product Manager",
+            "department": "Product"
+        }
+    ],
+    "company": {
+        "name": "Tech Solutions",
+        "location": "New York",
+        "established": 2012
+    },
+    "projects": [
+        {
+            "project_id": "P001",
+            "title": "AI Development",
+            "status": "ongoing"
+        },
+        {
+            "project_id": "P002",
+            "title": "UI/UX Revamp",
+            "status": "completed"
+        }
+    ]
+}

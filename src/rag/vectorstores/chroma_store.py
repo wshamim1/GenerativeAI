@@ -1,0 +1,1 @@
+# Chroma Vectorstore definition

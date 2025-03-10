@@ -1,0 +1,13 @@
+langchain
+langgraph
+python-dotenv
+chromadb
+langchain-openai
+langchain-anthropic
+ibm-watsonx-ai
+ibm-watson-machine-learning
+langchain-community
+langchain-ollama
+
+jq
+pypdf
