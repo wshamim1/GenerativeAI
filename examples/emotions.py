@@ -7,14 +7,14 @@ from langchain_core.output_parsers import StrOutputParser
 
 llm = OllamaLLM().get_llm()
 
-file_path = "/Users/shamim/Desktop/Codes/GenerativeAI/data/test.csv"
-loader = DocumentLoader(file_path)
-doc = loader.load()
+prompt_template  = """you are emotionally helpful assistant. Classify the sentiments of the user's text with 
+            Only one of the following emotions {emotions}. Just generate a single word with emotions"""
 
-prompt_template = "You are a helpful assistant that reads documents {documents} and tell me the ID for ccc."
 prompt_chain = GenericPromptChain(llm, prompt_template)
 
-summary = prompt_chain.run(documents=doc)
+input="I Like to play Tennis"
+
+response = prompt_chain.run(emotions=input)
 
 
-print(summary)
+print(response)

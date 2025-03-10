@@ -8,6 +8,8 @@ ibm-watsonx-ai
 ibm-watson-machine-learning
 langchain-community
 langchain-ollama
-
+langchain-ibm
 jq
 pypdf
+pymysql
+cryptography
