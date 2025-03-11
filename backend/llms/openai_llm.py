@@ -1,15 +1,24 @@
 import os
 from dotenv import load_dotenv
-from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI
 
+# Load environment variables from .env file
 load_dotenv()
 
 class OpenAILLM:
     def __init__(self):
-        self.llm = OpenAI(
-            api_key=os.getenv('OPENAI_API_KEY'),
-            temperature=0.5,
-            max_tokens=1000
+        api_key = os.getenv('OPENAI_API_KEY')
+        print(api_key)
+        print("-----")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable is not set.")
+        
+        self.llm = ChatOpenAI(
+            api_key=api_key,
+            temperature=0,
+            max_tokens=None,
+            timeout=None,
+            max_retries=2,
         )
 
     def get_llm(self):

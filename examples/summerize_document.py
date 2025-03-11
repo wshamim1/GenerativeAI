@@ -1,26 +1,26 @@
-
-
 import sys, os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 # insert root directory into python module search path
 sys.path.insert(1, os.getcwd())
 
-from backend.llms.ollama_llm import OllamaLLM
+from backend.llms.anthropic_llm import AnthropicLLM
 from backend.documentloader.document_loader import DocumentLoader
 from backend.chains.prompt_chain import GenericPromptChain
 
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 
-llm = OllamaLLM().get_llm()
+llm = AnthropicLLM().get_llm()
 
 file_path = "/Users/shamim/Desktop/Codes/GenerativeAI/data/test.pdf"
 loader = DocumentLoader(file_path)
 doc = loader.load()
 
-prompt_template = "You are a helpful assistant that reads documents {documents} and tell me the ID for ccc."
+prompt_template = "You are a helpful assistant that reads documents {documents} and summarize in 1 line."
 prompt_chain = GenericPromptChain(llm, prompt_template)
 
 summary = prompt_chain.run(documents=doc)
-
 
 print(summary)

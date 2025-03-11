@@ -92,7 +92,7 @@ class DocumentLoader:
             raise ValueError(f"Unsupported file type: {file_extension}")
 
         module_name, class_name = loader_class_path.rsplit('.', 1)
-        module = importlib.import_module(f'documentloader.loaders.{module_name}')
+        module = importlib.import_module(f'backend.documentloader.loaders.{module_name}')
         loader_class = getattr(module, class_name)
 
         if file_extension == '.json':
@@ -106,11 +106,3 @@ class DocumentLoader:
 
         return loader.load()
 
-# Example Usage:
-if __name__ == '__main__':
-    # Example with XML file
-    loader = DocumentLoader(
-        file_path="example.xml"  # Specify path to your XML file
-    )
-    docs = loader.load()
-    print(docs[0])  # Printing the first document fetched from the XML file
