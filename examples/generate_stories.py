@@ -11,14 +11,15 @@ from langchain_core.output_parsers import StrOutputParser
 
 llm = OllamaLLM().get_llm()
 
-prompt_template  = """you are emotionally helpful assistant. Classify the sentiments of the user's text with 
-            Only one of the following emotions {emotions}. Just generate a single word with emotions"""
+prompt_template  = """you are  helpful assistant. 
+                    Generate me a 10 line stories for title {title}. 
+                    """
 
 prompt_chain = GenericPromptChain(llm, prompt_template)
 
-input="I Like to play Tennis"
+title="Lion and fox"
 
-response = prompt_chain.run(emotions=input)
+response = prompt_chain.run(title=title)
 
 
 print(response)
