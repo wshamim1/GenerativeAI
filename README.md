@@ -1,4 +1,4 @@
-# Project
+# Project (Still being worked on)
 
 This project provides a comprehensive framework for working with LangChain, LangGraph, RAG (Retrieval-Augmented Generation), Agents, and various Tools. It includes modules for loading documents, generating embeddings, interacting with databases, and running various chains and prompts.
 
