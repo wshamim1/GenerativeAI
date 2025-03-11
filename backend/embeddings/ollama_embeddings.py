@@ -15,7 +15,5 @@ class OllamaEmbedding:
     def get_embeddings(self):
         return self.embeddings
 
-
-
 print(OllamaEmbedding().get_embeddings())
 

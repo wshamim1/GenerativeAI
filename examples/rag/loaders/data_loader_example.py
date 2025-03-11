@@ -4,11 +4,11 @@ import sys, os
 # insert root directory into python module search path
 sys.path.insert(1, os.getcwd())
 
-from src.llms.ollama_llm import OllamaLLM
-from src.documentloader.document_loader import DocumentLoader
-from src.splitter.document_splitter import DocumentsSplitter
-from src.embeddings.ollama_embeddings import OllamaEmbedding
-from src.vectorstores.chroma_store import VectorStores
+from backend.llms.ollama_llm import OllamaLLM
+from backend.documentloader.document_loader import DocumentLoader
+from backend.splitter.document_splitter import DocumentsSplitter
+from backend.embeddings.ollama_embeddings import OllamaEmbedding
+from backend.vectorstores.chroma_store import VectorStores
 
 
 

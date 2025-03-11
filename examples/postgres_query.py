@@ -3,12 +3,12 @@ import sys, os
 sys.path.insert(1, os.getcwd())
 
 
-from src.databases.postgres_db import PostgresDatabase
-from src.llms.ollama_llm import OllamaLLM
-from src.chains.sql_chain import GenericSQLChain
+from backend.databases.postgres_db import PostgresDatabase
+from backend.llms.ollama_llm import OllamaLLM
+from backend.chains.sql_chain import GenericSQLChain
 
 # Initialize MySQL database
-mysql_db = PostgresDatabase().db
+mysql_db = PostgresDatabase().get_db()
 
 # Initialize LLM
 llm = OllamaLLM().get_llm()

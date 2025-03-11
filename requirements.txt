@@ -16,3 +16,5 @@ cryptography
 psycopg2-binary
 langchain_milvus
 pymilvus
+databricks-langchain
+langchain-google-vertexai
