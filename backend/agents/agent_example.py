@@ -11,9 +11,11 @@ async def main():
     tool_class_names = ['WikiTool', 'WeatherTool']
     agent_executor = await AgentExecutor.create(llm_name='ollama', model_name='llama3.2', tool_class_names=tool_class_names)
 
-    response = await agent_executor.run("Tell me about Pele in 2 lines and give me the weather for New York.")
+    response = await agent_executor.run("tell me about pele and then tell me the weather for New York.")
     print(response)
 
 # Ensure proper asyncio execution
 if __name__ == "__main__":
     asyncio.run(main())
+
+
