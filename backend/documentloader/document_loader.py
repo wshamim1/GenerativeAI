@@ -1,18 +1,8 @@
 import os
 import importlib
+import json
 
 class DocumentLoader:
-    loader_map = {
-        '.csv': 'csv_loader.CSVLoaderWrapper',
-        '.txt': 'text_loader.TextLoaderWrapper',
-        '.md': 'markdown_loader.UnstructuredMarkdownLoaderWrapper',
-        '.docx': 'word_loader.UnstructuredWordDocumentLoaderWrapper',
-        '.pdf': 'pdf_loader.PyPDFLoaderWrapper',
-        '.json': 'json_loader.JSONLoaderWrapper',
-        '.xml': 'xml_loader.UnstructuredXMLLoaderWrapper',
-        '.wiki': 'wikipedia_loader.WikipediaLoaderWrapper',
-    }
-
     def __init__(self, file_path=None, jq_schema='.', json_text_content=True,
                  mongo_uri=None, db_name=None, collection_name=None, mongo_query=None,
                  github_repo=None, github_filepath=None, github_branch="main", github_issue_creator=None,
@@ -34,6 +24,14 @@ class DocumentLoader:
         self.bigquery_table = bigquery_table
         self.web_url = web_url
         self.wikipedia_page = wikipedia_page
+
+        # Load loader configuration from JSON file
+        config_path = os.path.join(os.path.dirname(__file__), 'loader_config.json')
+        try:
+            with open(config_path, 'r') as config_file:
+                self.loader_map = json.load(config_file)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Error reading JSON configuration file: {e}")
 
     def load(self):
         if self.mongo_uri and self.db_name and self.collection_name:
@@ -105,4 +103,3 @@ class DocumentLoader:
             loader = loader_class(self.file_path)
 
         return loader.load()
-

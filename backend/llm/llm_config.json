@@ -1,0 +1,9 @@
+{
+    "anthropic": "anthropic_llm.AnthropicLLM",
+    "openai": "openai_llm.OpenAILLM",
+    "mistral": "mistralai_llm.MistralAILLM",
+    "ollama": "ollama_llm.OllamaLLM",
+    "databricks": "databricks_llm.DatabricksLLM",
+    "google": "google_vertex.GoogleVertexAILLM",
+    "ibm": "ibm_watsonx.IBMWatsonxLLM"
+}

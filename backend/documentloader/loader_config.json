@@ -1,0 +1,10 @@
+{
+    ".csv": "csv_loader.CSVLoaderWrapper",
+    ".txt": "text_loader.TextLoaderWrapper",
+    ".md": "markdown_loader.UnstructuredMarkdownLoaderWrapper",
+    ".docx": "word_loader.UnstructuredWordDocumentLoaderWrapper",
+    ".pdf": "pdf_loader.PyPDFLoaderWrapper",
+    ".json": "json_loader.JSONLoaderWrapper",
+    ".xml": "xml_loader.UnstructuredXMLLoaderWrapper",
+    ".wiki": "wikipedia_loader.WikipediaLoaderWrapper"
+}
