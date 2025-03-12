@@ -1,56 +1,59 @@
-# Agent Executor implementation
+import asyncio
 import os
-import importlib
+import sys
 import json
 from dotenv import load_dotenv
-import sys
-
-# Load environment variables from .env file
-load_dotenv()
-
-sys.path.insert(1, os.getcwd())
 from langchain.agents import initialize_agent, AgentType
+import importlib
+
+# Ensure the backend directory is in the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+
 from backend.llm.generic_llms import GenericLLM
 
+# Load environment variables
+load_dotenv()
+
+# Load tool configuration from JSON file
+config_path = os.path.join(os.path.dirname(__file__), 'tool_config.json')
+with open(config_path, 'r') as config_file:
+    TOOL_CLASS_MAP = json.load(config_file)
+
 class AgentExecutor:
-    def __init__(self, llm_name, model_name, tool_classes):
-        self.llm_name = llm_name
-        self.model_name = model_name
-        self.tool_classes = tool_classes
-        self.llm = self._initialize_llm()
-        self.tools = self._initialize_tools()
+    def __init__(self, llm, tools):
+        self.llm = llm
+        self.tools = tools
 
-    def _initialize_llm(self):
-        return GenericLLM(self.llm_name, self.model_name).get_llm()
+    @classmethod
+    async def create(cls, llm_name, model_name, tool_class_names):
+        """Asynchronous factory method to initialize tools properly."""
+        llm = GenericLLM(llm_name, model_name).get_llm()
+        tools = await cls._initialize_tools_async(tool_class_names)
+        return cls(llm, tools)
 
-    def _initialize_tools(self):
-        tools = []
-        for tool_class in self.tool_classes:
-            tool_instance = tool_class()
-            tools.append(tool_instance.get_tool())
-        return tools
+    @staticmethod
+    async def _initialize_tools_async(tool_class_names):
+        tasks = [AgentExecutor._create_tool_async(tool_class_name) for tool_class_name in tool_class_names]
+        return await asyncio.gather(*tasks)
 
-    def run(self, prompt):
+    @staticmethod
+    async def _create_tool_async(tool_class_name):
+        if tool_class_name not in TOOL_CLASS_MAP:
+            raise ValueError(f"Unsupported tool class: {tool_class_name}")
+        
+        module_path, class_name = TOOL_CLASS_MAP[tool_class_name].rsplit('.', 1)
+        module = importlib.import_module(module_path)
+        tool_class = getattr(module, class_name)
+        tool_instance = tool_class()
+        return tool_instance.get_tool()
+
+    async def run(self, prompt):
         agent = initialize_agent(
             tools=self.tools,
             llm=self.llm,
             agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             verbose=True,
-            handle_parsing_errors=True  # Allows the agent to retry when parsing fails
+            handle_parsing_errors=True
         )
-        return agent.run(prompt)
+        return await agent.ainvoke(prompt)
 
-# Example usage
-if __name__ == "__main__":
-    from backend.agents.tools.search_tool import SearchTool
-    # Add more tools as needed
-    tool_classes = [SearchTool]
-
-    agent_executor = AgentExecutor(
-        llm_name='ollama',  # Change this to 'openai', 'mistral', or 'anthropic' as needed
-        model_name='llama3.2',  # Specify the model name
-        tool_classes=tool_classes
-    )
-
-    response = agent_executor.run("in 2 line tell me about python.")
-    print(response)

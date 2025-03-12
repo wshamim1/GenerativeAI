@@ -1,0 +1,4 @@
+{
+    "WikiTool": "backend.agents.tools.wiki_tool.WikiTool",
+    "WeatherTool": "backend.agents.tools.weather_tool.WeatherTool"
+}
