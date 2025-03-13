@@ -1,0 +1,292 @@
+{
+    "success": true,
+    "credits_left": 19993,
+    "rate_limit_left": 19999,
+    "person": {
+    "publicIdentifier": "eden-marco",
+    "linkedInIdentifier": "ACoAABx4394BeQhL15XiUqnQf7d9fobHXw13SMo",
+    "memberIdentifier": "477683678",
+    "linkedInUrl": "https://www.linkedin.com/in/eden-marco",
+    "firstName": "Eden",
+    "lastName": "Marco",
+    "headline": "LLMs @ Google Cloud | Best-selling Udemy Instructor | Backend & GenAI | Opinions stated here are my own, not those of my company",
+    "location": "United States of America",
+    "summary": "Backend developer --> Now an AI Engineer, Udemy.com best seller instructor\nOpinions stated here are my own, not those of my company",
+    "photoUrl": "https://media.licdn.com/dms/image/v2/C4D03AQGlv35ItbkHBw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1610187870291?e=1743033600&v=beta&t=qwPiKtLvDo-o-i2DRlo9khmiVlCz-mz18GsfBrsLzOw",
+    "backgroundUrl": "https://media.licdn.com/dms/image/v2/C4E16AQEMHegghll9tA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1641673555814?e=1743033600&v=beta&t=MTIzGNYSbDnu-bKCRXJTKJW9YKCdT4f3uJHNOyF0FHc",
+    "openToWork": false,
+    "premium": true,
+    "pronoun": null,
+    "showVerificationBadge": true,
+    "creationDate": {
+    "month": 1,
+    "year": 2016
+    },
+    "followerCount": 7105,
+    "positions": {
+    "positionsCount": 8,
+    "positionHistory": [
+    {
+    "title": "LLM Specialist, Customer Engineering - Google Cloud",
+    "companyName": "Google",
+    "description": "",
+    "startEndDate": {
+    "start": {
+    "month": 7,
+    "year": 2023
+    },
+    "end": null
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_400_400/company-logo_400_400/0/1631311446380?e=1745452800&v=beta&t=BmXluR2rgbEZKOXWlPFncwlDkktKXXAcs8jpthh8ucU",
+    "linkedInUrl": "https://www.linkedin.com/company/1441/",
+    "linkedInId": "1441"
+    },
+    {
+    "title": "Customer Engineer",
+    "companyName": "Google",
+    "description": "",
+    "startEndDate": {
+    "start": {
+    "month": 6,
+    "year": 2022
+    },
+    "end": {
+    "month": 6,
+    "year": 2023
+    }
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_400_400/company-logo_400_400/0/1631311446380?e=1745452800&v=beta&t=BmXluR2rgbEZKOXWlPFncwlDkktKXXAcs8jpthh8ucU",
+    "linkedInUrl": "https://www.linkedin.com/company/1441/",
+    "linkedInId": "1441"
+    },
+    {
+    "title": "Independent Udemy Instructor",
+    "companyName": "Udemy",
+    "description": "Production and publication of 5 best-selling courses on the Udemy platform, with a total of 100K+ enrolled students, 22000+ ratings and a solid 4.7 ★ rating.",
+    "startEndDate": {
+    "start": {
+    "month": 2,
+    "year": 2017
+    },
+    "end": null
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQEf_NHzN2yVQg/company-logo_400_400/company-logo_400_400/0/1723593046388/udemy_logo?e=1745452800&v=beta&t=i77mCc3Ml_HNzBR4KK7WT8kvG7F15ausb8K1gMvjZHQ",
+    "linkedInUrl": "https://www.linkedin.com/company/822535/",
+    "linkedInId": "822535"
+    },
+    {
+    "title": "Senior Software Engineer",
+    "companyName": "Orca Security",
+    "companyLocation": "On-site",
+    "description": "",
+    "startEndDate": {
+    "start": {
+    "month": 1,
+    "year": 2022
+    },
+    "end": {
+    "month": 6,
+    "year": 2022
+    }
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQGVRPFfGzoS4w/company-logo_400_400/company-logo_400_400/0/1695226035396/orca_security_logo?e=1745452800&v=beta&t=xLSQmMfS1ca819ofnqhai4szug4meRaWkHIva19zAOc",
+    "linkedInUrl": "https://www.linkedin.com/company/35573984/",
+    "linkedInId": "35573984"
+    },
+    {
+    "title": "Software Engineer",
+    "companyName": "Orca Security",
+    "description": "",
+    "startEndDate": {
+    "start": {
+    "month": 4,
+    "year": 2020
+    },
+    "end": {
+    "month": 1,
+    "year": 2022
+    }
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQGVRPFfGzoS4w/company-logo_400_400/company-logo_400_400/0/1695226035396/orca_security_logo?e=1745452800&v=beta&t=xLSQmMfS1ca819ofnqhai4szug4meRaWkHIva19zAOc",
+    "linkedInUrl": "https://www.linkedin.com/company/35573984/",
+    "linkedInId": "35573984"
+    },
+    {
+    "title": "Software Engineer",
+    "companyName": "Wizer",
+    "description": "",
+    "startEndDate": {
+    "start": {
+    "month": 12,
+    "year": 2019
+    },
+    "end": {
+    "month": 4,
+    "year": 2020
+    }
+    },
+    "contractType": "Full-time",
+    "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQEXt0RaaDfBCg/company-logo_400_400/company-logo_400_400/0/1652790901127/get_wizer_logo?e=1745452800&v=beta&t=N7fsvu1r99Ud7qteGAfYEsjydwPoSx2ikJciqm_NZMo",
+    "linkedInUrl": "https://www.linkedin.com/company/10339630/",
+    "linkedInId": "10339630"
+    },
+    {
+    "title": "Software Engineer",
+    "companyName": "Deep Instinct",
+    "description": "",
+    "startEndDate": {
+    "start": {
+    "month": 7,
+    "year": 2019
+    },
+    "end": {
+    "month": 12,
+    "year": 2019
+    }
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQFcYZDGPPl1gQ/company-logo_400_400/company-logo_400_400/0/1726082659360/deep_instinct_logo?e=1745452800&v=beta&t=O4qKRyyYPdPTmSZwWYOiWyXA55LruSgwsIX0M-tgX-s",
+    "linkedInUrl": "https://www.linkedin.com/company/12904445/",
+    "linkedInId": "12904445"
+    },
+    {
+    "title": "Computer Science Teaching Assistant (External Lecturer)",
+    "companyName": "Reichman University",
+    "description": "* Functional Programming (Including international school)\n* Introduction to Computer Science",
+    "startEndDate": {
+    "start": {
+    "month": 10,
+    "year": 2018
+    },
+    "end": {
+    "month": 7,
+    "year": 2019
+    }
+    },
+    "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQGg9wJflAQnjw/company-logo_400_400/company-logo_400_400/0/1632054180509/reichman_university_idc_herzliya_logo?e=1745452800&v=beta&t=KbzBDTMjHAxhkAjLoZVFVY7iCJfPXNO1Fdq4Pj6YniU",
+    "linkedInUrl": "https://www.linkedin.com/company/133744/",
+    "linkedInId": "133744"
+    }
+    ]
+    },
+    "schools": {
+    "educationsCount": 1,
+    "educationHistory": [
+    {
+    "degreeName": "Bachelor’s Degree",
+    "fieldOfStudy": "Computer Science",
+    "linkedInUrl": "https://www.linkedin.com/company/3155/",
+    "schoolLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQG12formuFdJg/company-logo_400_400/company-logo_400_400/0/1630469288270/technion_logo?e=1745452800&v=beta&t=h6K_ZRTmWkId4ZlaGEVH72fNEO_84PHgVYS1fN5RCtQ",
+    "schoolName": "Technion - Israel Institute of Technology",
+    "startEndDate": {
+    "start": {
+    "month": 1,
+    "year": 2015
+    },
+    "end": {
+    "month": 1,
+    "year": 2019
+    }
+    }
+    }
+    ]
+    },
+    "skills": [
+    "Python",
+    "Cloud Computing",
+    "Django",
+    "AWS",
+    "Elasticsearch",
+    "PostgreSQL",
+    "SQL",
+    "NoSQL",
+    "Bash",
+    "Linux",
+    "Firebase",
+    "Cloud Firestore",
+    "MongoDB",
+    "Jenkins",
+    "docker",
+    "Neo4j",
+    "Haskell",
+    "Functional Programming",
+    "Graph Databases"
+    ],
+    "languages": [],
+    "recommendations": {
+    "recommendationsCount": 0,
+    "recommendationHistory": []
+    },
+    "certifications": {
+    "certificationsCount": 0,
+    "certificationHistory": []
+    }
+    },
+    "company": {
+    "linkedInId": "1441",
+    "name": "Google",
+    "universalName": "google",
+    "linkedInUrl": "https://www.linkedin.com/company/1441",
+    "employeeCount": 300535,
+    "followerCount": 35663141,
+    "employeeCountRange": {
+    "start": 10001,
+    "end": 1
+    },
+    "websiteUrl": "https://goo.gle/3DLEokh",
+    "tagline": null,
+    "description": "A problem isn't truly solved until it's solved for all. Googlers build products that help create opportunities for everyone, whether down the street or across the globe. Bring your insight, imagination and a healthy disregard for the impossible. Bring everything that makes you unique. Together, we can build for everyone.\n\nCheck out our career opportunities at goo.gle/3DLEokh",
+    "industry": "Software Development",
+    "phone": null,
+    "specialities": [
+    "search",
+    "ads",
+    "mobile",
+    "android",
+    "online video",
+    "apps",
+    "machine learning",
+    "virtual reality",
+    "cloud",
+    "hardware",
+    "artificial intelligence",
+    "youtube",
+    "software"
+    ],
+    "headquarter": {
+    "city": "Mountain View",
+    "country": "US",
+    "postalCode": "94043",
+    "geographicArea": "CA",
+    "street1": "1600 Amphitheatre Parkway",
+    "street2": null
+    },
+    "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_400_400/company-logo_400_400/0/1631311446380?e=1745452800&v=beta&t=BmXluR2rgbEZKOXWlPFncwlDkktKXXAcs8jpthh8ucU",
+    "fundingData": {
+    "numberOfFundingRounds": 3,
+    "crunchbaseOrganizationUrl": "https://www.crunchbase.com/organization/google?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=profile_cta",
+    "lastFundingRound": {
+    "fundingType": "Series unknown",
+    "moneyRaised": {
+    "amount": "25000000",
+    "currencyCode": "USD"
+    },
+    "fundingRoundUrl": "https://www.crunchbase.com/funding_round/google-series-unknown--6c4715f9?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=last_funding",
+    "announcedOn": "1999-06-07T00:00:00.000Z",
+    "numberOfOtherInvestors": 7,
+    "investorsUrl": "https://www.crunchbase.com/funding_round/google-series-unknown--6c4715f9?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=all_investors",
+    "leadInvestors": [
+    {
+    "name": "Sequoia Capital",
+    "url": "https://www.crunchbase.com/organization/sequoia-capital?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=investor",
+    "image": "https://media.licdn.com/dms/image/sync/v2/D4D38AQFTbW9ThA5fOw/crunchbase_investor_logo_100/crunchbase_investor_logo_100/0/1737051864687?e=1737961200&v=beta&t=vM0LA3w8_TOYFLmTwllTnTRWLYdbHqyER-zT5y2njiY"
+    },
+    {
+    "name": "Kleiner Perkins",
+    "url": "https://www.crunchbase.com/organization/kleiner-perkins-caufield-byers?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=investor",
+    "image": "https://media.licdn.com/dms/image/sync/v2/D4D38AQFcDueDDWFLRw/crunchbase_investor_logo_100/crunchbase_investor_logo_100/0/1737051871940?e=1737961200&v=beta&t=_Yzoe28GKUVMdX9r_xQb7k5QknKhp-sDdGc2VpnBiMY"
+    }
+    ]
+    }
+    }
+    }
+    }

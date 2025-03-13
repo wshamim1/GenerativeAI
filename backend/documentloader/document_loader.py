@@ -96,8 +96,8 @@ class DocumentLoader:
         if file_extension == '.json':
             loader = loader_class(
                 self.file_path,
-                jq_schema=self.jq_schema,
-                text_content=self.json_text_content
+                jq_schema=self.jq_schema
+               
             )
         else:
             loader = loader_class(self.file_path)
