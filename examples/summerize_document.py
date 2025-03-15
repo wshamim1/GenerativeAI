@@ -9,7 +9,7 @@ sys.path.insert(1, os.getcwd())
 
 from backend.llm.generic_llms import GenericLLM
 from backend.documentloader.document_loader import DocumentLoader
-from backend.chains.prompt_chain import GenericPromptChain
+from backend.chains.prompt_templates import GenericPromptChain
 
 llm_name = 'ollama'  # Change this to 'openai', 'mistral', or 'anthropic' as needed
 model_name = 'llama3.2'  # Specify the model name
