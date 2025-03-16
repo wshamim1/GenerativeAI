@@ -12,10 +12,10 @@ class CircumferenceTool(BaseTool):
     name: str = "Circumference calculator"
     description: str = "Use this tool when you need to calculate the circumference of a circle given its radius."
 
-    def _run(self, radius: Union[int, float]) -> float:
+    def _run(self, radius: Union[int, float,str]) -> float:
         return float(radius) * 2.0 * pi
 
-    async def _arun(self, radius: Union[int, float]) -> float:
+    async def _arun(self, radius: Union[int, float,str]) -> float:
         return float(radius) * 2.0 * pi
 
 class CircumferenceToolWrapper:

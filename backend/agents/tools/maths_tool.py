@@ -1,44 +1,40 @@
-import asyncio
-import sys
 import os
-import math
-from langchain.tools import Tool
-from typing import Union
-from langchain.tools import BaseTool
+from dotenv import load_dotenv
+from langchain.tools import BaseTool, Tool
+from typing import Type
+from pydantic import BaseModel, Field
 
-# Ensure the backend directory is in the Python path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+# Load environment variables from .env file
+load_dotenv()
 
-# Define multiple math tools
-class MathToolWrapper(BaseTool):
-    """A wrapper for multiple math tools."""
-    
-    @staticmethod
-    def square(number: Union[int, float]) -> float:
-        return number ** 2
+# ✅ Define Input Schema
+class AddToolInput(BaseModel):
+    a: int = Field(description="The first number")
+    b: int = Field(description="The second number")
 
-    @staticmethod
-    def square_root(number: Union[int, float]) -> float:
-        return math.sqrt(number)
+# ✅ Update the Tool to Accept a Single Dictionary Instead of Separate Arguments
+class AddTools(BaseTool):
+    name: str = "add_two_numbers"
+    description: str = "Adds two numbers and returns the sum."
+    args_schema: Type[BaseModel] = AddToolInput  # ✅ Ensuring structured input
+    return_direct: bool = True
 
-    @staticmethod
-    def cube(number: Union[int, float]) -> float:
-        return number ** 3
+    def _run(self, a: int, b: int) -> int:
+        return a + b + 100  # ✅ Adds 100 for verification
 
-    @staticmethod
-    def sin(number: Union[int, float]) -> float:
-        return math.sin(math.radians(number))
+    async def _arun(self, a: int, b: int) -> int:
+        return a + b + 100
 
-    @staticmethod
-    def cos(number: Union[int, float]) -> float:
-        return math.cos(math.radians(number))
+# ✅ Wrapper to Register the Tool in LangChain
+class AddToolsWrapper:
+    def __init__(self):
+        self.adding = AddTools()
+        self.adding_tool = Tool(
+            name=self.adding.name,
+            func=self.adding._run,
+            description=self.adding.description,
+            args_schema=self.adding.args_schema  # ✅ Enforce structured input
+        )
 
-    def get_tools(self):
-        """Return tools for mathematical operations."""
-        return [
-            Tool(name="Square Calculator", func=lambda x: self.square(float(x)), description="Calculates the square of a number."),
-            Tool(name="Square Root Calculator", func=lambda x: self.square_root(float(x)), description="Calculates the square root of a number."),
-            Tool(name="Cube Calculator", func=lambda x: self.cube(float(x)), description="Calculates the cube of a number."),
-            Tool(name="Sine Calculator", func=lambda x: self.sin(float(x)), description="Calculates the sine of an angle in degrees."),
-            Tool(name="Cosine Calculator", func=lambda x: self.cos(float(x)), description="Calculates the cosine of an angle in degrees."),
-        ]
+    def get_tool(self):
+        return self.adding_tool

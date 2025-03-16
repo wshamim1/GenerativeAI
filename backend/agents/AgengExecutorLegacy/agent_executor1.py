@@ -1,5 +1,3 @@
-
-
 import os
 import importlib
 import json
@@ -10,13 +8,10 @@ import sys
 load_dotenv()
 
 sys.path.insert(1, os.getcwd())
-from langchain.agents import initialize_agent, AgentType, AgentExecutor, create_react_agent
+from langchain.agents import initialize_agent, create_tool_calling_agent
 from backend.llm.generic_llms import GenericLLM
 
-from langchain import hub
-
-
-class AgentExecutor1:
+class AgentExecutor:
     def __init__(self, llm_name, model_name, tool_classes):
         self.llm_name = llm_name
         self.model_name = model_name
@@ -35,15 +30,9 @@ class AgentExecutor1:
         return tools
 
     def run(self, prompt):
-        react_prompt = hub.pull("hwchase17/react")
-
-        agent = create_react_agent(
+        agent = create_tool_calling_agent(
             tools=self.tools,
             llm=self.llm,
-            prompt=react_prompt
+            prompt=prompt
         )
-        agent_executor = AgentExecutor(agent=agent, tools=self.tools, verbose=True)
-        return agent_executor.invoke(prompt)
-
-    pass
-
+        return agent

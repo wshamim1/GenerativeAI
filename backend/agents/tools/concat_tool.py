@@ -5,33 +5,31 @@ import os
 from langchain.tools import BaseTool
 from typing import List, Type
 from pydantic import BaseModel, Field
-from langchain_core.callbacks import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
 
 # Load environment variables from .env file
 load_dotenv()
 
+# ✅ Define the Correct Input Schema (List-based)
 class ConcatToolInput(BaseModel):
     items: List[str] = Field(description="List of strings to concatenate")
 
+# ✅ Update the Tool to Accept a Single List Instead of Two Separate Arguments
 class ConcatTool(BaseTool):
-    name: str = "Concat all items"
-    description: str = "Use this tool when you need to concatenate all strings in a given list."
-    args_schema: Type[BaseModel] = ConcatToolInput  # Removed trailing comma
+    name: str = "concat_tool"
+    description: str = "Concatenates all strings in a given list with '--=========' separator."
+    args_schema: Type[BaseModel] = ConcatToolInput
     return_direct: bool = True
 
     def concat_items(self, items: List[str]) -> str:
-        return "-----====---".join(items)  # Ensure correct list joining
+        return "--=========".join(items)  # ✅ Concatenate properly
 
     def _run(self, items: List[str]) -> str:
         return self.concat_items(items)
 
     async def _arun(self, items: List[str]) -> str:
-        await asyncio.sleep(0)  # Ensure async behavior
         return self.concat_items(items)
 
+# ✅ Wrapper to Register the Tool in LangChain
 class ConcatToolWrapper:
     def __init__(self):
         self.concating = ConcatTool()
@@ -39,7 +37,7 @@ class ConcatToolWrapper:
             name=self.concating.name,
             func=self.concating._run,
             description=self.concating.description,
-            args_schema=self.concating.args_schema  # Properly set args_schema
+            args_schema=self.concating.args_schema
         )
 
     def get_tool(self):
